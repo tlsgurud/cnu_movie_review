@@ -10,9 +10,9 @@ url = 'https://news.v.daum.net/v/20211021152915953'
 result = requests.get(url)         # url의 전체 코드를 가져옴
 
 doc = BeautifulSoup(result.text, 'html.parser')
-title = doc.select('h3.tit_view')[0].get_text()
+title = doc.select('h3.tit_view')[0].get_text()  # class -> . # id -> # 으로 표기
 contents = doc.select('section p')
-
+print(contents)
 contents.pop(-1)         # 기자 정보 삭제
 content = ''             # 본문 총합
 for info in contents:
